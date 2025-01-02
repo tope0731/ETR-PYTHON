@@ -1,0 +1,14 @@
+{% extends "base.html"%}
+{% block content%}
+<form action="{{ url_for('editProduct', id = product['product_id'])}}" method="POST">
+    NAME <input type="text"name="name", id="name" value="{{ product['name']}}"> <br><br>
+    DESCRIPTION <input type="text" name="description", id="description" value="{{ product['description']}}">
+    PRICE <input type="number"name="price", id="price" value="{{ product['price']}}"> <br><br>
+    STOCK <input type="number" name="stock", id="stock" value="{{ product['stock']}}"> 
+    CATEGORY <input type="text" name="category", id="category" value="{{ product['category']}}">
+    STATUS <input type="text" name="status", id="status" value="{{ product['status']}}">
+    <br><br>
+    <button type="submit">EDIT product</button>
+</form>
+
+{% endblock%}

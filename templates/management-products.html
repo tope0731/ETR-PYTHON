@@ -1,0 +1,28 @@
+{% extends "base.html"%}
+{% block title%}Manage users dito{% endblock%}
+{% block content%}
+<h1>Management of products</h1>
+<a href="/add-product"><button>Add User</button></a>
+<br><br>
+
+<table>
+    <thead>
+        <th>PRODUCT ID</th>
+        <th>NAME</th>
+        <th>ACTIONS</th>
+    </thead>
+    <tbody>
+        {% for product in products%}
+            <tr>
+                <td>{{ product['product_id'] }}</td>
+                <td>{{ product['name'] }}</td>
+                <td>
+                    <a href="{{ url_for('viewProduct', id=product['product_id']) }}" class="btn btn-info btn-sm">View</a>
+                    <a href="{{ url_for('editProduct', id = product['product_id'])}}"><button>Edit</button></a>
+                    <a href="{{ url_for('deleteProduct', id = product['product_id'])}}"><button>Delete</button></a>
+                </td>
+            </tr>
+        {% endfor%}
+    </tbody>
+</table>
+{% endblock%}

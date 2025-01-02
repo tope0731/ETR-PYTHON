@@ -1,0 +1,48 @@
+{% extends "base.html"%}
+{% block content%}
+<div class="container mt-4 p-4 border rounded shadow bg-light">
+    <h3 class="mb-4">Product Details</h3>
+    
+    <div class="mb-3">
+        <label class="form-label fw-bold">Product ID:</label>
+        <p class="form-control-plaintext">{{ product['product_id'] }}</p>
+    </div>
+    
+    <div class="mb-3">
+        <label class="form-label fw-bold">First Name:</label>
+        <p class="form-control-plaintext">{{ product['name'] }}</p>
+    </div>
+    
+    <div class="mb-3">
+        <label class="form-label fw-bold">Last Description:</label>
+        <p class="form-control-plaintext">{{ product['description'] }}</p>
+    </div>
+    
+    <div class="mb-3">
+        <label class="form-label fw-bold">Price:</label>
+        <p class="form-control-plaintext">{{ product['price'] }}</p>
+    </div>
+    
+    <div class="mb-3">
+        <label class="form-label fw-bold">Stock:</label>
+        <p class="form-control-plaintext">{{ product['stock'] }}</p>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label fw-bold">Category:</label>
+        <p class="form-control-plaintext">{{ product['category'] }}</p>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label fw-bold">Status:</label>
+        <p class="form-control-plaintext">{{ product['status'] }}</p>
+    </div>
+    
+    <div class="text-end">
+        <a href="{{ url_for('manageProducts') }}" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>
+
+   
+
+{% endblock%}
