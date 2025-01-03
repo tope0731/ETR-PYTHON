@@ -1,13 +1,50 @@
 {% extends "base.html"%}
 {% block content%}
-<form action="/add-product" method="POST">
-    NAME <input type="text"name="name", id="name"> <br><br>
-    DESCRIPTION <input type="text" name="description", id="description">
-    PRICE <input type="number"name="price", id="price"> <br><br>
-    STOCK <input type="number" name="stock", id="stock"> 
-    CATEGORY <input type="text" name="category", id="category">
-    STATUS <input type="text" name="status", id="status">
-    <br><br>
-    <button type="submit">Add product</button>
-</form>
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white">
+            <h3 class="mb-0">Add Product</h3>
+        </div>
+        <div class="card-body">
+            <form action="/add-product" method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Enter product name" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <input type="text" name="description" id="description" class="form-control" placeholder="Enter product description" required>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="number" name="price" id="price" class="form-control" placeholder="Enter product price" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="stock" class="form-label">Stock</label>
+                        <input type="number" name="stock" id="stock" class="form-control" placeholder="Enter stock quantity" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="category" class="form-label">Category</label>
+                    <input type="text" name="category" id="category" class="form-control" placeholder="Enter product category" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="status" class="form-label">Status</label>
+                    <select name="status" id="status" class="form-select" required>
+                        <option value="Available">Available</option>
+                        <option value="Out of Stock">Out of Stock</option>
+                        <option value="Low Stock">Low Stock</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Add Product</button>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock%}
