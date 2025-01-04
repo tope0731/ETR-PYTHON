@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 60vh;">
+    <img src="{{ url_for('static', filename='images/python learning.png') }}" 
+         alt="Python Learning" 
+         class="img-fluid mb-4" 
+         style="max-width: 60%; border: 1px solid #ccc; border-radius: 8px;">
+
+    <a href="/dashboard" class="btn btn-primary">Back to Dashboard</a>
+</div>
+{% endblock %}

@@ -60,7 +60,6 @@ def show_login():
     else:
         return render_template("login.html")
 
-
 @app.route('/logout')
 def logout():
     flash('Logout successful', 'success')
@@ -74,6 +73,14 @@ def viewDashboard():
         return render_template("dashboard.html")
     else:
         return redirect(url_for('show_login'))
+    
+@app.route("/about") 
+def viewAbout():
+    return render_template("about.html")
+
+@app.route("/home") 
+def viewHome():
+    return render_template("home.html")
     
 @app.route('/manage-products')
 def manageProducts():
@@ -152,6 +159,14 @@ def deleteProduct(id):
 @app.route("/admin-dashboard") 
 def viewAdminDashboard():
         return render_template("admin/admin-dashboard.html")
+    
+@app.route("/admin-about") 
+def viewAdminAbout():
+        return render_template("admin/admin-about.html")
+    
+@app.route("/admin-home") 
+def viewAdminHome():
+    return render_template("admin/admin-home.html")
     
 @app.route('/add-customer', methods = ['GET','POST'])
 def addCustomer():
